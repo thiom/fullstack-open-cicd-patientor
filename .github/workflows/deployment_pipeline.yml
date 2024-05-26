@@ -1,0 +1,38 @@
+name: Deployment pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+
+jobs:
+  simple-deployment-pipeline:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install backend dependencies
+        working-directory: ./patientor-backend
+        run: npm install
+      - name: lint backend
+        working-directory: ./patientor-backend
+        run: npm run eslint
+      - name: build backend
+        working-directory: ./patientor-backend
+        run: npm run tsc
+
+      - name: Install frontend dependencies
+        working-directory: ./patientor-frontend
+        run: npm install
+      - name: lint frontend
+        working-directory: ./patientor-frontend
+        run: npm run lint
+      - name: build frontend
+        working-directory: ./patientor-frontend
+        run: npm run build

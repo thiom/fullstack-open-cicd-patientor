@@ -22,7 +22,7 @@ jobs:
         run: npm install
       - name: lint backend
         working-directory: ./patientor-backend
-        run: npm run eslint
+        run: npm run lint
       - name: build backend
         working-directory: ./patientor-backend
         run: npm run tsc

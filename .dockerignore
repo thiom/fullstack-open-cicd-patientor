@@ -1,0 +1,30 @@
+# flyctl launch added from patientor-backend/.gitignore
+patientor-backend/**/node_modules
+patientor-backend/**/build
+
+# flyctl launch added from patientor-frontend/.gitignore
+# Logs
+patientor-frontend/**/logs
+patientor-frontend/**/*.log
+patientor-frontend/**/npm-debug.log*
+patientor-frontend/**/yarn-debug.log*
+patientor-frontend/**/yarn-error.log*
+patientor-frontend/**/pnpm-debug.log*
+patientor-frontend/**/lerna-debug.log*
+
+patientor-frontend/**/node_modules
+patientor-frontend/**/dist
+patientor-frontend/**/dist-ssr
+patientor-frontend/**/*.local
+
+# Editor directories and files
+patientor-frontend/**/.vscode/*
+!patientor-frontend/**/.vscode/extensions.json
+patientor-frontend/**/.idea
+patientor-frontend/**/.DS_Store
+patientor-frontend/**/*.suo
+patientor-frontend/**/*.ntvs*
+patientor-frontend/**/*.njsproj
+patientor-frontend/**/*.sln
+patientor-frontend/**/*.sw?
+fly.toml
